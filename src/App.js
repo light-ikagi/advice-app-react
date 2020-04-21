@@ -59,7 +59,7 @@ class App extends React.Component {
         <button type="button" onClick={this.onSubmit} className="btn">
           Set ID
         </button>
-        <a href={"avakinlife://item/id/" + itemID}>CLICK ME TO GO</a>
+        <a href={"avakinlife://shop/item/" + itemID}>CLICK ME TO GO</a>
       </div>
     );
   }
