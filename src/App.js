@@ -5,21 +5,7 @@ import axios from "axios";
 class App extends React.Component {
   state = {
     advice: "",
-    itemID: "",
   };
-
-  constructor(props) {
-    super(props);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    var title = this.title;
-    console.log(title.value);
-    const { value } = title;
-    this.setState({ itemID: value });
-  }
 
   componentDidMount() {
     this.fetchAdvice();
@@ -39,7 +25,6 @@ class App extends React.Component {
 
   render() {
     const { advice } = this.state;
-    const { itemID } = this.state;
     return (
       <div className="app">
         <div className="card">
@@ -48,18 +33,6 @@ class App extends React.Component {
             <span>GIVE ME ADVICE!</span>
           </button>
         </div>
-        <form className="form-horizontal">
-          <input
-            type="text"
-            className="form-control"
-            ref={(c) => (this.title = c)}
-            name="title"
-          />
-        </form>
-        <button type="button" onClick={this.onSubmit} className="btn">
-          Set ID
-        </button>
-        <a href={`avakinlife://shop/item/"${itemID}`}>{itemID}</a>
       </div>
     );
   }
